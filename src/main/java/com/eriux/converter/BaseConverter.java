@@ -128,7 +128,7 @@ public class BaseConverter {
 		
 		String s = hex.toString().toUpperCase();
 
-		return s = "0x" + s;
+		return "0x" + s;
 	}
 
 	private static String binaryValue(char ch) {
@@ -144,13 +144,13 @@ public class BaseConverter {
 	}
 
 	private static void validateBinary(String binary) {
-		if (binary == null || !binary.trim().matches("[01]+")) {
+		if (binary == null || !binary.trim().matches("[01]+$")) {
 			throw new IllegalArgumentException("Invalid binary number");
 		}
 	}
 
 	private static void validateDecimal(String decimal) {
-		if (decimal == null || !decimal.trim().matches("\\d+")) {
+		if (decimal == null || !decimal.trim().matches("\\d+$")) {
 			throw new IllegalArgumentException("Invalid decimal");	
 		}
 	}

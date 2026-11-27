@@ -102,6 +102,9 @@ class BaseConverterTest {
 
         assertThrows(IllegalArgumentException.class,
             () -> BaseConverter.binaryToDecimal(""));
+        
+		assertThrows(IllegalArgumentException.class,
+            () -> BaseConverter.binaryToDecimal(" "));
 
         assertThrows(IllegalArgumentException.class,
             () -> BaseConverter.binaryToHex(null));
@@ -115,8 +118,11 @@ class BaseConverterTest {
         assertThrows(IllegalArgumentException.class,
             () -> BaseConverter.decimalToHex("-10"));
 
-        assertThrows(IllegalArgumentException.class,
-            () -> BaseConverter.decimalToBinary(""));
+		assertThrows(IllegalArgumentException.class,
+			() -> BaseConverter.decimalToBinary(""));
+		
+		assertThrows(IllegalArgumentException.class,
+			() -> BaseConverter.decimalToBinary(" "));
 
         assertThrows(IllegalArgumentException.class,
             () -> BaseConverter.decimalToHex(null));
@@ -132,6 +138,12 @@ class BaseConverterTest {
 
         assertThrows(IllegalArgumentException.class,
             () -> BaseConverter.hexToDecimal("0x"));
+        
+		assertThrows(IllegalArgumentException.class,
+            () -> BaseConverter.hexToDecimal(""));
+        
+		assertThrows(IllegalArgumentException.class,
+            () -> BaseConverter.hexToDecimal(" "));
 
         assertThrows(IllegalArgumentException.class,
             () -> BaseConverter.hexToBinary(null));
